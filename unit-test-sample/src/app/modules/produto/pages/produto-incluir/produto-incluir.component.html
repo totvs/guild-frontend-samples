@@ -1,0 +1,38 @@
+<po-page-default p-title="Incluir Produto">
+  <div [formGroup]="produtoForm">
+
+    <po-input
+        name="codigo"
+        formControlName="codigo"
+        p-label="Código">
+    </po-input>
+
+    <po-input
+        name="nome"
+        formControlName="nome"
+        p-label="Nome">
+    </po-input>
+
+    <po-switch
+        name="possuiCodigoExterno"
+        formControlName="possuiCodigoExterno"
+        p-label="Possui código externo">
+    </po-switch>
+
+    <po-input
+        [p-required]="produtoForm.get('possuiCodigoExterno').value"
+        [p-disabled]="!produtoForm.get('possuiCodigoExterno').value"
+        name="codigoExterno"
+        formControlName="codigoExterno"
+        p-label="Código Externo">
+    </po-input>
+    <div *ngIf="this.produtoForm.get('codigoExterno').errors?.required">
+        Campo requerido
+    </div>
+
+    <po-button
+        (p-click)="validar()"
+        p-label="Validar">
+    </po-button>
+  </div>
+</po-page-default>
