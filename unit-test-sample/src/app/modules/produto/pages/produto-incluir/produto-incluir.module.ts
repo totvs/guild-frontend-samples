@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PoButtonModule, PoFieldModule, PoPageModule } from '@po-ui/ng-components';
+import { CoreModule } from '../../../../core/core.module';
 import { ProdutoIncluirComponent } from './produto-incluir.component';
 
 @NgModule({
@@ -9,8 +9,8 @@ import { ProdutoIncluirComponent } from './produto-incluir.component';
     ProdutoIncluirComponent
   ],
   imports: [
+    CoreModule,
     FormsModule,
-    CommonModule,
     PoButtonModule,
     PoPageModule,
     PoFieldModule,

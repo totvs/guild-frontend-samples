@@ -1,1 +1,14 @@
-<p>produto-listar works!</p>
+<po-page-list
+    [p-actions]="acoesPagina"
+    [p-breadcrumb]="breadcrumb"
+    p-title="Gerenciar Produtos">
+  <po-table
+    [p-container]="'shadow'"
+    [p-loading]="carregando"
+    [p-striped]="true"
+    [p-loading-show-more]="carregandoMaisProdutos"
+    [p-show-more-disabled]="!produtoBuscarService.temProximaPagina"
+    [p-items]="produtoBuscarService.items"
+    (p-show-more)="carregarMaisProdutos()">
+  </po-table>
+</po-page-list>

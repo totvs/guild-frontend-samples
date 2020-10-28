@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProdutoGetByIdService } from './produto-get-by-id.service';
+import { ProdutoGetByIdService } from './produto-buscar-por-id.service';
 
 describe('ProdutoGetByIdService', () => {
   let service: ProdutoGetByIdService;

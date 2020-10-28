@@ -58,6 +58,16 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "backend": {
+              "main": "src/main-mem.ts",
+              "tsConfig": "tsconfig.backend.json",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.backend.ts"
+                }
+              ]
             }
           }
         },
@@ -69,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "unit-test-sample:build:production"
+            },
+            "backend": {
+              "browserTarget": "unit-test-sample:build:backend"
             }
           }
         },

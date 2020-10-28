@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProdutoIncluirComponent } from './pages/produto-incluir/produto-incluir.component';
+import { ProdutoListarComponent } from './pages/produto-listar/produto-listar.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'incluir',
-    pathMatch: 'full'
+    component: ProdutoListarComponent
   },
   {
     path: 'incluir',
