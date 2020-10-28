@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PoBreadcrumb, PoPageAction } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-produto-incluir',
@@ -7,6 +8,34 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./produto-incluir.component.css']
 })
 export class ProdutoIncluirComponent implements OnInit {
+
+  breadcrumb: PoBreadcrumb = {
+    items: [
+      {
+        label: 'Início',
+        link: '/'
+      },
+      {
+        label: 'Produto',
+        link: '/produto'
+      },
+      {
+        label: 'Novo produto',
+        link: '/produto/novo'
+      }
+    ]
+  };
+
+  acoesPagina: PoPageAction[] = [
+    {
+      label: 'Salvar',
+      action: () => { }
+    },
+    {
+      label: 'Cancelar',
+      action: () => { }
+    }
+  ];
 
   produtoForm: FormGroup;
 

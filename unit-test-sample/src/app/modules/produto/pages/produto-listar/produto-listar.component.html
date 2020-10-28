@@ -3,12 +3,15 @@
     [p-breadcrumb]="breadcrumb"
     p-title="Gerenciar Produtos">
   <po-table
+    [p-sort]="true"
     [p-container]="'shadow'"
     [p-loading]="carregando"
     [p-striped]="true"
     [p-loading-show-more]="carregandoMaisProdutos"
     [p-show-more-disabled]="!produtoBuscarService.temProximaPagina"
     [p-items]="produtoBuscarService.items"
+    [p-columns]="colunas"
+    [p-actions]="acoesTabela"
     (p-show-more)="carregarMaisProdutos()">
   </po-table>
 </po-page-list>

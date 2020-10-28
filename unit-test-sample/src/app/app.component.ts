@@ -12,10 +12,12 @@ export class AppComponent {
   readonly menus: Array<PoMenuItem> = [
     {
       label: 'Home',
+      icon: 'po-icon-home',
       action: this.irParaHome.bind(this)
     },
     {
       label: 'Produto',
+      icon: 'po-icon-basket',
       action: this.irParaProduto.bind(this)
     }
   ];

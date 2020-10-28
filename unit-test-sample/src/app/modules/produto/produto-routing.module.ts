@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProdutoAlterarComponent } from './pages/produto-alterar/produto-alterar.component';
 import { ProdutoIncluirComponent } from './pages/produto-incluir/produto-incluir.component';
 import { ProdutoListarComponent } from './pages/produto-listar/produto-listar.component';
 
@@ -9,8 +10,12 @@ const routes: Routes = [
     component: ProdutoListarComponent
   },
   {
-    path: 'incluir',
+    path: 'novo',
     component: ProdutoIncluirComponent
+  },
+  {
+    path: ':id',
+    component: ProdutoAlterarComponent
   }
 ];
 

@@ -1,6 +1,6 @@
 export interface IProduto {
 
-  id: string;
+  id?: string;
   codigo: string;
   descricao: string;
   codigoExterno?: string;

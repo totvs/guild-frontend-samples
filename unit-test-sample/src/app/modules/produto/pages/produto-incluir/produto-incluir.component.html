@@ -1,4 +1,8 @@
-<po-page-default p-title="Incluir Produto">
+<po-page-default
+    p-title="Incluir Produto"
+    [p-breadcrumb]="breadcrumb"
+    [p-actions]="acoesPagina">
+
   <div [formGroup]="produtoForm">
 
     <po-input
