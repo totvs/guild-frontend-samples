@@ -11,9 +11,12 @@ export class ProdutoBuscarService {
 
   public static ENDPOINT = `${environment.backend}/api/v1/produtos`;
 
-  private temProximaPaginaValor: boolean;
+  private temProximaPaginaValor = false;
   get temProximaPagina(): boolean {
     return this.temProximaPaginaValor;
+  }
+  set temProximaPagina(valor: boolean) {
+    this.temProximaPaginaValor = valor;
   }
 
   private paginaAtualValor = 1;
@@ -29,6 +32,9 @@ export class ProdutoBuscarService {
   private itemsValor: IProduto[] = [];
   get items(): IProduto[] {
     return this.itemsValor;
+  }
+  set items(valor: IProduto[]) {
+    this.itemsValor = valor;
   }
 
   constructor(private readonly httpClient: HttpClient) { }
@@ -75,7 +81,7 @@ export class ProdutoBuscarService {
       map((retorno: ApiPadraoRespostaBuscar<IProduto>) => {
         this.temProximaPaginaValor = retorno.hasNext;
         this.itemsValor = [...this.itemsValor, ...retorno.items];
-        return this.itemsValor;
+        return retorno.items;
       })
     );
   }
