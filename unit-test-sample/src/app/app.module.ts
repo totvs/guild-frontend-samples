@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -36,7 +35,6 @@ const i18nConfig: PoI18nConfig = {
     BrowserModule,
     I18nPipesModule,
     PoToolbarModule,
-    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
     WebBackendApiModule.forRoot(),

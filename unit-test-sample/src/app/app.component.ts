@@ -31,7 +31,7 @@ export class AppComponent {
     {
       label: 'inicio',
       icon: 'po-icon-home',
-      link: '/',
+      link: '/inicio',
       shortLabel: 'inicio'
     },
     {
