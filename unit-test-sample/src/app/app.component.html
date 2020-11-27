@@ -1,7 +1,16 @@
 <div class="po-wrapper">
-  <po-toolbar p-title="AppName"></po-toolbar>
 
-  <po-menu [p-menus]="menus"></po-menu>
+  <po-toolbar
+    [p-title]="'tituloAplicacao' | i18n"
+    [p-actions]="acoesToolbar | i18nToolbarAction"
+    [p-actions-icon]="'po-icon-world'">
+  </po-toolbar>
+
+  <po-menu
+    [p-menus]="menus | i18nMenuItem"
+    [p-collapsed]="true"
+    [p-filter]="true">
+  </po-menu>
 
   <router-outlet></router-outlet>
 </div>
