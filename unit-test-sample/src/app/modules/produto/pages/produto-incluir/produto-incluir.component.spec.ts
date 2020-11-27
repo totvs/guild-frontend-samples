@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutoIncluirComponent } from './produto-incluir.component';
 
-describe('ProdutoIncluirComponent', () => {
+xdescribe('produto-incluir.component.spec | ProdutoIncluirComponent', () => {
+
   let component: ProdutoIncluirComponent;
   let fixture: ComponentFixture<ProdutoIncluirComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProdutoIncluirComponent ],
-
-    })
-    .compileComponents();
+      declarations: [ProdutoIncluirComponent],
+      imports: [FormsModule, ReactiveFormsModule]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('ProdutoIncluirComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 });

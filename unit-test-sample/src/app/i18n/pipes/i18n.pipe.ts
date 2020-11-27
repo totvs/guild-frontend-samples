@@ -21,7 +21,7 @@ export class I18nPipe implements PipeTransform {
    */
   transform(literal: keyof ILiterals): string {
     if (!this.i18nService.literais || !this.i18nService.literais.hasOwnProperty(literal)) {
-      console.warn(`[i18n] ${literal} => Literal não encontrada para o idioma ${this.i18nService.idioma}`)
+      console.warn(`[i18n] ${literal} => Literal não encontrada para o idioma ${this.i18nService.idioma}`);
       return literal;
     } else {
       return this.i18nService.literais[literal];

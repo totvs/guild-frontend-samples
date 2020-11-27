@@ -1,8 +1,9 @@
 import { I18nMenuItemPipe } from './i18n-menu-item.pipe';
 
-describe('I18nMenuItemPipe', () => {
-  it('create an instance', () => {
-    const pipe = new I18nMenuItemPipe();
+describe('i18n-menu-item.pipe.spec | I18nMenuItemPipe', () => {
+
+  it('deve instanciar o pipe', () => {
+    const pipe = new I18nMenuItemPipe(jasmine.createSpyObj(['transform']));
     expect(pipe).toBeTruthy();
   });
 });

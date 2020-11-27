@@ -3,25 +3,21 @@ import { TestBed } from '@angular/core/testing';
 import { IProduto } from './../../entities/produto/produto.interface';
 import { ProdutoBuscarService } from './produto-buscar.service';
 
-fdescribe('ProdutoBuscarService', () => {
+describe('produto-buscar.service.spec | ProdutoBuscarService', () => {
 
   let service: ProdutoBuscarService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule
-      ],
-      providers: [
-        ProdutoBuscarService
-      ]
+      imports: [HttpClientTestingModule],
+      providers: [ProdutoBuscarService]
     });
     service = TestBed.inject(ProdutoBuscarService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('Deve instanciar o serviço', () => {
+  it('deve instanciar o serviço', () => {
     expect(service).toBeTruthy();
     expect(service.items).toEqual([]);
     expect(service.tamanhoPagina).toBe(10);
@@ -29,7 +25,7 @@ fdescribe('ProdutoBuscarService', () => {
     expect(service.paginaAtual).toBe(1);
   });
 
-  it('Deve buscar produtos da primeira página', () => {
+  it('deve buscar produtos da primeira página', () => {
 
     const retornoEsperado: IProduto[] = [
       {
@@ -66,7 +62,7 @@ fdescribe('ProdutoBuscarService', () => {
     });
   });
 
-  it('Não deve buscar produtos da primeira página quando ocorre erro no servidor', () => {
+  it('não deve buscar produtos da primeira página quando ocorre erro no servidor', () => {
 
     service.buscarProdutos().subscribe(() => { }, (error) => {
       expect(error.error.code).toBe('1');
@@ -88,7 +84,7 @@ fdescribe('ProdutoBuscarService', () => {
     });
   });
 
-  it('Deve buscar mais produtos da segunda página', () => {
+  it('deve buscar mais produtos da segunda página', () => {
 
     const itemJaCarregado: IProduto = {
       id: 'id1',
@@ -128,7 +124,7 @@ fdescribe('ProdutoBuscarService', () => {
     });
   });
 
-  it('Não deve buscar mais produtos se não houver próxima página', () => {
+  it('não deve buscar mais produtos se não houver próxima página', () => {
 
     expect(() => service.buscarMaisProdutos().subscribe()).toThrow(
       new Error('Não é possível buscar mais produtos, pois não há outra página')

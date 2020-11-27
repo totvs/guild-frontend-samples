@@ -1,16 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-
 import { ProdutoAlterarService } from './produto-alterar.service';
 
-describe('ProdutoAlterarService', () => {
+describe('produto-alterar.service.spec | ProdutoAlterarService', () => {
+
   let service: ProdutoAlterarService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ProdutoAlterarService]
+    });
     service = TestBed.inject(ProdutoAlterarService);
   });
 
-  it('should be created', () => {
+  it('deve criar o serviço', () => {
     expect(service).toBeTruthy();
   });
 });

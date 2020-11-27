@@ -26,7 +26,9 @@ describe('i18n.pipe.spec | I18nPipe', () => {
   });
 
   it('deve retornar a chave da literal quando literais indefinida', () => {
-    i18nService.literais = undefined;
+    pipe = new I18nPipe(jasmine.createSpyObj([], {
+      literais: undefined
+    }));
     expect(pipe.transform('inicio')).toBe('inicio');
   });
 
